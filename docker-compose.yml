@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  game:
+    build:
+      context: .
+    ports:
+      - "4500:4500"
+    volumes:
+      - "./pp2host.conf:/etc/pp2host/pp2host.conf"
+      - "./autohost.ini:/etc/pp2host/static/autohost.ini"
+      - "./autoscript.txt:/etc/pp2host/static/autoscript.txt"
+      - "scores:/etc/pp2host/static/resultlogs"
+
+volumes:
+  scores:
